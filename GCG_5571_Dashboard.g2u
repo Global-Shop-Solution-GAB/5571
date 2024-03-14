@@ -1,0 +1,1244 @@
+Program.Sub.ScreenSU.Start
+Gui.Form..Create
+Gui.Form..Size(15360,9390)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..BackColor(-2147483633)
+Gui.Form..MousePointer(0)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form..Caption("Part Dimension")
+Gui.Form.gsParts.Create(GsGridControl)
+Gui.Form.gsParts.Size(15045,7320)
+Gui.Form.gsParts.Position(105,1230)
+Gui.Form.gsParts.Event(CellValueChanged,gsParts_CellValueChanged)
+Gui.Form.gsParts.Event(RowCellClick,gsParts_RowCellClick)
+Gui.Form.gsParts.TabStop(True)
+Gui.Form.gsParts.TabIndex(12)
+Gui.Form.cmdSave.Create(Button)
+Gui.Form.cmdSave.Size(855,375)
+Gui.Form.cmdSave.Position(105,8640)
+Gui.Form.cmdSave.Caption("Save")
+Gui.Form.cmdSave.Event(Click,cmdSave_Click)
+Gui.Form.cmdSave.TabStop(True)
+Gui.Form.cmdSave.TabIndex(11)
+Gui.Form.cmdNewQuote.Create(Button)
+Gui.Form.cmdNewQuote.Size(1080,375)
+Gui.Form.cmdNewQuote.Position(13080,60)
+Gui.Form.cmdNewQuote.Caption("New Quote")
+Gui.Form.cmdNewQuote.Event(Click,cmdNewQuote_Click)
+Gui.Form.cmdNewQuote.TabStop(True)
+Gui.Form.cmdNewQuote.TabIndex(9)
+Gui.Form.cmdNewOrder.Create(Button)
+Gui.Form.cmdNewOrder.Size(1080,375)
+Gui.Form.cmdNewOrder.Position(14160,60)
+Gui.Form.cmdNewOrder.Caption("New Order")
+Gui.Form.cmdNewOrder.Event(Click,cmdNewOrder_Click)
+Gui.Form.cmdNewOrder.TabStop(True)
+Gui.Form.cmdNewOrder.TabIndex(10)
+Gui.Form.txtPart.Create(TextBox,"",True,2295,300,0,990,480,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtPart.TabStop(True)
+Gui.Form.txtPart.TabIndex(1)
+Gui.Form.txtPart.MaxLength(20)
+Gui.Form.lblPart.Create(Label,"Part",True,735,255,0,990,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form.txtVendor.Create(TextBox,"",True,855,300,0,3750,480,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtVendor.TabStop(True)
+Gui.Form.txtVendor.TabIndex(3)
+Gui.Form.txtVendor.MaxLength(6)
+Gui.Form.lblVendor.Create(Label,"Vendor",True,735,255,0,3750,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblPO.Create(Label,"PO",True,735,255,0,4635,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form.txtPO.Create(TextBox,"",True,855,300,0,4635,480,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtPO.TabStop(True)
+Gui.Form.txtPO.TabIndex(4)
+Gui.Form.txtPO.MaxLength(7)
+Gui.Form.lblLot.Create(Label,"Lot",True,735,255,0,5520,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form.txtLot.Create(TextBox,"",True,1665,300,0,5520,480,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtLot.TabStop(True)
+Gui.Form.txtLot.TabIndex(5)
+Gui.Form.txtLot.MaxLength(15)
+Gui.Form.lblInventoryNumber.Create(Label,"Inventory # (Heat)",True,1605,255,0,7215,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form.cmdPartBrowser.Create(Button)
+Gui.Form.cmdPartBrowser.Size(390,300)
+Gui.Form.cmdPartBrowser.Position(3315,480)
+Gui.Form.cmdPartBrowser.Caption("^")
+Gui.Form.cmdPartBrowser.FontSize(7)
+Gui.Form.cmdPartBrowser.Event(Click,cmdPartBrowser_Click)
+Gui.Form.cmdPartBrowser.TabStop(True)
+Gui.Form.cmdPartBrowser.TabIndex(2)
+Gui.Form.cmdFind.Create(Button)
+Gui.Form.cmdFind.Size(855,345)
+Gui.Form.cmdFind.Position(9735,465)
+Gui.Form.cmdFind.Caption("Find")
+Gui.Form.cmdFind.TabStop(True)
+Gui.Form.cmdFind.TabIndex(8)
+Gui.Form.cmdFind.Event(Click,cmdFind_Click)
+Gui.Form.txtInventoryNumber.Create(TextBox,"",True,1665,300,0,7215,480,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtInventoryNumber.TabStop(True)
+Gui.Form.txtInventoryNumber.TabIndex(6)
+Gui.Form.txtInventoryNumber.MaxLength(15)
+Gui.Form.cmdClear.Create(Button)
+Gui.Form.cmdClear.Size(810,330)
+Gui.Form.cmdClear.Position(8910,465)
+Gui.Form.cmdClear.TabStop(True)
+Gui.Form.cmdClear.TabIndex(7)
+Gui.Form.cmdClear.Caption("Clear")
+Gui.Form.cmdClear.FontSize(7)
+Gui.Form.cmdClear.Event(Click,cmdClear_Click)
+Gui.Form.lblPart2.Create(Label,"Pre-Filter",True,795,255,0,105,135,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblPart3.Create(Label,"Post-Filter",True,855,255,0,105,990,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblPart4.Create(Label,"Rows",True,585,255,0,13740,570,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblRows.Create(Label,"",True,795,255,0,14445,570,True,1,"Arial",8,-2147483646,0)
+Gui.Form.lblRows.BorderStyle(2)
+Gui.Form.cmdExport.Create(Button)
+Gui.Form.cmdExport.Size(1080,375)
+Gui.Form.cmdExport.Position(11985,60)
+Gui.Form.cmdExport.TabStop(True)
+Gui.Form.cmdExport.TabIndex(9)
+Gui.Form.cmdExport.Caption("Export")
+Gui.Form.cmdExport.Event(Click,cmdExport_Click)
+Gui.Form.cmdRefresh.Create(Button)
+Gui.Form.cmdRefresh.Size(855,375)
+Gui.Form.cmdRefresh.Position(11115,60)
+Gui.Form.cmdRefresh.Caption("Refresh")
+Gui.Form.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.Form.lblLength.Create(Label,"Length From",True,1035,255,0,8925,1005,True,0,"Arial",8,-2147483633,0)
+Gui.Form.txtFromLen.Create(TextBox,"",True,1215,300,0,9975,900,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtFromLen.NumericOnly(1)
+Gui.Form.txtFromLen.TabIndex(17)
+Gui.Form.lblLengthTo.Create(Label,"To",True,315,255,0,11220,1005,True,2,"Arial",8,-2147483633,0)
+Gui.Form.txtLenTo.Create(TextBox,"",True,1215,300,0,11550,900,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtLenTo.NumericOnly(1)
+Gui.Form.txtLenTo.TabIndex(18)
+Gui.Form.lblWidth.Create(Label,"Width From",True,945,255,0,5130,1005,True,0,"Arial",8,-2147483633,0)
+Gui.Form.txtFromWidth.Create(TextBox,"",True,1215,300,0,6075,900,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtFromWidth.NumericOnly(1)
+Gui.Form.txtFromWidth.TabIndex(15)
+Gui.Form.lblWidthTo.Create(Label,"To",True,315,255,0,7305,1005,True,2,"Arial",8,-2147483633,0)
+Gui.Form.txtWidthTo.Create(TextBox,"",True,1215,300,0,7650,900,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtWidthTo.NumericOnly(1)
+Gui.Form.txtWidthTo.TabIndex(16)
+Gui.Form.lblThickness.Create(Label,"Thickness From",True,1260,255,0,960,1005,True,0,"Arial",8,-2147483633,0)
+Gui.Form.txtFromThick.Create(TextBox,"",True,1215,300,0,2220,900,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtFromThick.NumericOnly(1)
+Gui.Form.txtFromThick.TabIndex(13)
+Gui.Form.lblThickTo.Create(Label,"To",True,315,255,0,3465,1005,True,2,"Arial",8,-2147483633,0)
+Gui.Form.txtThickTo.Create(TextBox,"",True,1215,300,0,3810,900,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtThickTo.NumericOnly(1)
+Gui.Form.txtThickTo.TabIndex(14)
+Gui.Form.cmdSetFilter.Create(Button)
+Gui.Form.cmdSetFilter.Size(855,375)
+Gui.Form.cmdSetFilter.Position(12870,825)
+Gui.Form.cmdSetFilter.TabIndex(19)
+Gui.Form.cmdSetFilter.Caption("Set Filter")
+Gui.Form.cmdSetFilter.Event(Click,cmdSetFilter_Click)
+Gui.Form.cmdClearFilter.Create(Button)
+Gui.Form.cmdClearFilter.TabIndex(20)
+Gui.Form.cmdClearFilter.Size(1020,375)
+Gui.Form.cmdClearFilter.Position(13800,825)
+Gui.Form.cmdClearFilter.Caption("Clear Filter")
+Gui.Form.cmdClearFilter.DefaultValue("")
+Gui.Form.cmdClearFilter.Event(Click,cmdClearFilter_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global..BulkDeclareString(sPart,sDesc,sVend,sVendName,sPO,sLine,sLocation,sLot,sBin,sHeat,sSerial,sColumns,sColumnUsedSelect,sIndexAndColumns,sGSProgramSerialize)
+v.Global..BulkDeclareLong(iAutoNum)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'BN Oct 30
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sSQL,sHold,sFile)
+V.Local.bRet.Declare(Boolean,False)
+
+F.Intrinsic.String.Build("{0}\Custom\",V.Caller.GlobalDir,V.Caller.User,V.Local.sFile)
+
+F.Intrinsic.File.DirExists(V.Local.sFile,V.Local.bRet)
+F.Intrinsic.Control.If(V.Local.bRet,=,False)
+	F.Intrinsic.File.CreateDir(V.Local.sFile)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("{0}\Custom\4729\",V.Caller.GlobalDir,V.Caller.User,V.Local.sFile)
+
+F.Intrinsic.File.DirExists(V.Local.sFile,V.Local.bRet)
+F.Intrinsic.Control.If(V.Local.bRet,=,False)
+	F.Intrinsic.File.CreateDir(V.Local.sFile)
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.UI.InvokeWaitDialog("Pulling data...")
+F.ODBC.Connection!con.OpenConnection("GLOBAL_OSP",V.Ambient.PUser,V.Ambient.PPass,9999)
+f.Intrinsic.Control.CallSub(check_custom_table)
+f.Intrinsic.Control.BlockEvents
+
+F.Intrinsic.Control.CallSub(Set_Anchors)
+
+'Get all column names of GCG_4729_Part_Dim
+f.ODBC.Connection!con.ExecuteAndReturn("Select ltrim(rtrim(XE$Name)) as Columns from X$File F1 Inner Join X$Field F2 On F2.XE$File = F1.XF$ID where F1.Xf$Name = 'GCG_4729_Part_Dim' and COLUMNS <> 'UK_AutoNum' and COLUMNS not like 'GCG_4729%'",V.Global.sColumns)
+'f.Intrinsic.String.Replace(v.Global.sColumns,"#$#GCG_4729_01#$#GCG_4729_02#$#GCG_4729_03#$#GCG_4729_04#$#GCG_4729_05#$#GCG_4729_06#$#GCG_4729_07#$#GCG_4729_08#$#GCG_4729_09","",v.Global.sColumns)
+f.Intrinsic.String.Replace(v.Global.sColumns,"#$#",",",v.Global.sColumnUsedSelect)
+f.Intrinsic.String.Replace(v.Global.sColumnUsedSelect,",Validate,Save,Wait","",v.Global.sColumnUsedSelect)
+f.Intrinsic.String.Split(v.Global.sColumns,"#$#",v.Global.sColumns)
+
+'f.Intrinsic.Control.CallSub(Bind_Parts)
+f.Intrinsic.Control.CallSub(Bind_Parts_1)
+
+f.Intrinsic.UI.CloseWaitDialog
+gui.Form..Show
+gui.Form..WindowState(2)
+f.Intrinsic.Control.UnBlockEvents
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+Program.Sub.Main.End
+
+Program.Sub.Bind_Parts.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sSQL)
+v.Local.bRet.Declare
+
+
+f.Intrinsic.String.Build("Select {0} from GCG_4729_Part_Dim where Validate = 'Y' and rtrim(Part)+rtrim(InventoryNumber)+rtrim(serial) In(Select rtrim(Part)+rtrim(Heat)+rtrim(Serial_Number) From V_Item_Master Where Quantity > 0)",v.Global.sColumnUsedSelect,v.Local.sSQL)
+
+F.Intrinsic.Control.If(v.DataTable.Parts.Exists,=,True)
+	F.Data.DataTable.Close("Parts")
+'	Function.Data.Dictionary.Close("InvoiceDict")
+'	Function.Data.Dictionary.Close("InvoiceNoDict")
+'	Function.Data.Dictionary.Close("SerialNoDict")
+f.Intrinsic.Control.EndIf 
+
+F.Data.Dictionary.Exists("InvoiceDict",V.Local.bRet)
+F.Intrinsic.Control.If(V.Local.bRet)
+	F.Data.Dictionary.Close("InvoiceDict")
+F.Intrinsic.Control.EndIf
+
+F.Data.Dictionary.Exists("InvoiceNoDict",V.Local.bRet)
+F.Intrinsic.Control.If(V.Local.bRet)
+	F.Data.Dictionary.Close("InvoiceNoDict")
+F.Intrinsic.Control.EndIf
+
+F.Data.Dictionary.Exists("SerialNoDict",V.Local.bRet)
+F.Intrinsic.Control.If(V.Local.bRet)
+	F.Data.Dictionary.Close("SerialNoDict")
+F.Intrinsic.Control.EndIf
+
+f.Data.DataTable.CreateFromSQL("Parts","con",v.Local.sSQL,true)
+f.Data.DataTable.AddColumn("Parts","Changed","String","")
+f.Data.DataTable.AddColumn("Parts","Invoice","boolean",False)
+f.Data.DataTable.AddColumn("Parts","InvoiceNo","String","")
+
+f.Data.DataTable.AddExpressionColumn("Parts","PartsHeat","String","[Part] + [InventoryNumber]")
+
+
+f.Data.Dictionary.CreateFromSQL("InvoiceDict","con","Select Purchase_Order,Cast(1 as Bit) from AP_Open_Items where Batch_Code = '10'")
+f.Data.Dictionary.SetDefaultReturn("InvoiceDict",False)
+F.Data.DataTable.FillFromDictionary("Parts","InvoiceDict","PO","Invoice")
+
+f.Data.Dictionary.CreateFromSQL("InvoiceNoDict","con","Select Purchase_Order,Invoice from AP_Open_Items where Batch_Code = '10'")
+f.Data.Dictionary.SetDefaultReturn("InvoiceNoDict","")
+F.Data.DataTable.FillFromDictionary("Parts","InvoiceNoDict","PO","InvoiceNo")
+
+
+f.Data.Dictionary.CreateFromSQL("SerialNoDict","con","Select Item.Part+Heat,Item.Lot from GCG_4729_Part_Dim DIM join v_Item_master Item on DIM.Part = Item.Part and Heat = InventoryNumber where Validate = 'Y'")
+f.Data.Dictionary.SetDefaultReturn("SerialNoDict","")
+F.Data.DataTable.FillFromDictionary("Parts","SerialNoDict","PartsHeat","Lot")
+
+'gui.Form.gsParts.visible(False)
+gui.Form.gsParts.AddGridviewFromDatatable("GV","Parts")
+
+gui.Form.gsParts.SuspendLayout
+f.Intrinsic.Control.CallSub(formatgrid)
+
+gui.Form.gsParts.MainView("GV")
+
+gui.Form.lblRows.Text(v.DataTable.Parts.RowCount)
+
+f.Intrinsic.Control.CallSub(deserialize)
+
+gui.Form.gsParts.ResumeLayout
+'gui.Form.gsParts.visible(True)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+Program.Sub.Bind_Parts.End
+
+Program.Sub.FormatGrid.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sVisibleIndex,sNumeric,sNotEditable)
+v.Local..BulkDeclareLong(iCnt)
+v.Local..BulkDeclareBoolean(bInSecurityGroup)
+
+Gui.Form.gsParts.SuspendLayout()
+Gui.Form.gsParts.SetGridViewProperty("GV","MultiSelect",True)
+Gui.Form.gsParts.SetGridViewProperty("GV","AllowSort",True)
+Gui.Form.gsParts.SetGridViewProperty("GV","AllowFilter",True)
+Gui.Form.gsParts.SetGridViewProperty("GV","Showgrouppanel",True)
+Gui.Form.gsParts.SetGridViewProperty("GV","AllowColumnResizing",True)
+Gui.Form.gsParts.SetGridViewProperty("GV","Enableappearanceoddrow",True)
+Gui.Form.gsParts.SetGridViewProperty("GV","OptionsFindAlwaysVisible",True)
+Gui.Form.gsParts.SetGridViewProperty("GV","OptionsViewShowAutoFilterRow",True)
+Gui.Form.gsParts.SetGridViewProperty("GV","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.Form.gsParts.SetGridViewProperty("GV","OptionsViewColumnAutoWidth",False)
+
+'Check Security Group for Edit ability
+f.Global.Security.IsInGroup(v.Caller.User,"",v.Caller.CompanyCode,v.Local.bInSecurityGroup)
+'For testing
+v.Local.bInSecurityGroup.Set(True)
+
+'Caption
+'f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","PO_Line@!@Line,Name_Vendor@!@Vendor Name,InventoryNumber@!@Inv.#,TheoreticalWeight@!@Th.Wght,ActualWeight@!@Act.Wght,CostLB@!@Cost/LB,FreightLB@!@Frght/LB,TotalCostLB@!@Total CostLB,TotalCost@!@Total Cost,CarTruck@!@Car/Truck,BargeNo@!@Barge.No,LocationNo@!@Loc.No,WhseLoc@!@Whse.Loc,SalesMan@!@Sales Man,ForeignDomestic@!@Frgn./Dom.,Testing@!@Test,MTRLink@!@MTR Link,Overwrite@!@Overwrite","sProperty","Caption")
+
+f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","PO_Line@!@Line,Name_Vendor@!@Vendor Name,InventoryNumber@!@Heat #,Serial@!@Plate #,TheoreticalWeight@!@Th.Wght,ActualWeight@!@Act.Wght,CostLB@!@Cost/LB,FreightLB@!@Frght/LB,TotalCostLB@!@Total CostLB,TotalCost@!@Total Cost,CarTruck@!@Car/Truck,BargeNo@!@Barge.No,LocationNo@!@Loc.No,WhseLoc@!@Whse.Loc,Lot@!@Hard Allocated,Allocated@!@Soft Allocated,SalesMan@!@Sales Man,ForeignDomestic@!@Frgn./Dom.,Testing@!@Test,MTRLink@!@MTR Link,Overwrite@!@Overwrite","sProperty","Caption")
+
+'Width
+'f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","Autonum,Invoice,Loc,PO,PO_Line,Vendor,Grade,Testing,Changed,Bin","sProperty","Width","sWidth","50")
+'f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","InvoiceNo,Allocated,Receiver,Thickness,Width,Length,TheoreticalWeight,ActualWeight,CostLB,FreightLB","sProperty","Width","sWidth","65")
+'f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","Mill,CarTruck,BargeNo,LocationNo,WhseLoc,CE,C,MN,P,S,SI,CU,NI,CR,MO,SN,AL,TI,V,CB,Slab,Job,SalesMan,ForeignDomestic,LastUser,Overwrite","sProperty","Width","sWidth","70")
+'f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","TotalCostLB,TotalCost,Lot,InventoryNumber","sProperty","Width","sWidth","80")
+'f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","Part,LastDateTime,MTRLink","sProperty","Width","sWidth","115")
+'f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","Notes,Description,Name_Vendor,Serial","sProperty","Width","sWidth","185")
+
+'InVisible
+f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","Autonum,Loc,SalesMan,LastUser,LastDateTime,Bin,changed,PartsHeat","sProperty","Invisible")
+
+'Visible Index
+v.Local.sVisibleIndex.Set("Invoice,InvoiceNo,Allocated,Part,Description,Name_Vendor,MTRLink,InventoryNumber,Serial,Grade,Thickness,Width,Length,TheoreticalWeight,ActualWeight,CostLB,FreightLB,TotalCostLB,TotalCost,PO,PO_Line,Receiver,Vendor,Mill,Slab,CarTruck,BargeNo,LocationNo,WhseLoc,Lot,CE,C,MN,P,S,SI,CU,NI,CR,MO,SN,AL,TI,V,CB,Job,ForeignDomestic,Testing,Notes,Overwrite")
+f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns",v.Local.sVisibleIndex,"sProperty","VisibleIndex")
+
+'HeaderFontBold
+f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns",v.Local.sVisibleIndex,"sProperty","HeaderFontBold")
+
+'DisplayNumeric
+v.Local.sNumeric.Set("Thickness,Width,Length,TheoreticalWeight,ActualWeight,CostLB,FreightLB,TotalCostLB,TotalCost,CE,C,MN,P,S,SI,CU,NI,CR,MO,SN,AL,TI,V,CB")
+f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns",v.Local.sNumeric,"sProperty","DisplayNumeric")
+
+'HeaderAllign right for numeric columns
+f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns",v.Local.sNumeric,"sProperty","HeaderAllign_Far")
+
+'HeaderBackColor
+f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","TotalCostLB,TotalCost,CE,TheoreticalWeight","sProperty","HeaderBackColor")
+
+'Editable
+f.Intrinsic.Control.If(v.Local.bInSecurityGroup,=,True)
+	f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","Allocated","sProperty","Editable")
+f.Intrinsic.Control.Else
+	gui.Form.cmdSave.Visible(False)
+f.Intrinsic.Control.EndIf
+
+'For_RowCellClick (not editable)
+f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","AutoNum,PartsHeat,PO,PO_Line,Receiver,Vendor,Name_Vendor,Part,Loc,Description,Lot,InventoryNumber,Bin,Serial,MTRLink,Grade,Thickness,Width,Length,TheoreticalWeight,ActualWeight,CostLB,FreightLB,TotalCostLB,TotalCost,Mill,CarTruck,BargeNo,LocationNo,WhseLoc,CE,C,MN,P,S,SI,CU,NI,CR,MO,SN,AL,TI,V,CB,Slab,Job,SalesMan,ForeignDomestic,Testing,Notes,LastDateTime,LastUser,Overwrite","sProperty","For_RowCellClick")
+
+'Link
+f.Intrinsic.Control.CallSub(FormatBulk,"sInputColumns","Part,MTRLink,PO","sProperty","Link")
+
+'Column Edit
+Gui.Form.gsParts.ColumnEdit("GV","ForeignDomestic","DropdownList","Foreign*!*Domestic")
+Gui.Form.gsParts.ColumnEdit("GV","Testing","DropdownList","No*!*Yes")
+Gui.Form.gsParts.SetColumnProperty("GV","Testing","ReadOnly",False)
+Gui.Form.gsParts.SetColumnProperty("GV","Testing","AllowEdit",True)
+
+Gui.Form.gsParts.ResumeLayout()
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+Program.Sub.FormatGrid.End
+
+Program.Sub.Form_UnLoad.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError)
+v.Local.iFlag.Declare(long)
+
+F.Intrinsic.UI.Msgbox("You are about to exit this screen and all information will be lost. Continue?","Exit",4,V.Local.iFlag)
+F.Intrinsic.Control.If(V.Local.iFlag,=,6)
+	f.Intrinsic.Control.CallSub(serialize)
+	f.ODBC.Connection!con.Close	
+	F.Intrinsic.Control.End 	
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.FormatBulk.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sColumns,sHold)
+v.Local..BulkDeclareLong(iCnt)
+
+f.Intrinsic.String.Split(v.Args.sInputColumns,",",v.Local.sColumns)
+
+f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+
+	F.Intrinsic.Control.SelectCase(v.Args.sProperty)
+		F.Intrinsic.Control.Case("Width")
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"MinWidth",v.Args.sWidth)
+'			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"MaxWidth",v.Args.sWidth)	
+		F.Intrinsic.Control.Case("Invisible")
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"Visible",False)
+		F.Intrinsic.Control.Case("VisibleIndex")
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"VisibleIndex",v.Local.iCnt)
+		F.Intrinsic.Control.Case("HeaderFontBold")
+			Gui.Form.gsParts.SetColumnProperty("GV",V.Local.sColumns(V.Local.iCnt),"HeaderFontBold",True)
+		F.Intrinsic.Control.Case("HeaderBackColor")
+			Gui.Form.gsParts.SetColumnProperty("GV",V.Local.sColumns(V.Local.iCnt),"HeaderBackColor",v.Color.PRI-GSS-01)
+		F.Intrinsic.Control.Case("DisplayNumeric")
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"DisplayCustomNumeric","#,###,###,##0.0000")
+		F.Intrinsic.Control.Case("Caption")
+			f.Intrinsic.String.Split(v.Local.sColumns(v.Local.iCnt),"@!@",v.Local.sHold)
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sHold(0),"Caption",v.Local.sHold(1))
+		F.Intrinsic.Control.Case("HeaderAllign_Far")
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"HeaderHAlignment","Far")
+		F.Intrinsic.Control.Case("Editable")		
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"AllowEdit","True")
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"ReadOnly","False")
+		F.Intrinsic.Control.Case("For_RowCellClick")
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"AllowEdit","False")
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"ReadOnly","True")
+			
+		f.Intrinsic.Control.Case("Link")
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"CellForeColor","Blue")
+			gui.Form.gsParts.SetColumnProperty("GV",v.Local.sColumns(v.Local.iCnt),"CellFontUnderline","True")
+	F.Intrinsic.Control.EndSelect	
+	
+f.Intrinsic.Control.Next(v.Local.iCnt)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatBulk.End
+
+Program.Sub.Calculate.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError)
+v.Local..BulkDeclareFloat(fCE,fHold)
+
+F.Intrinsic.Control.SelectCase(v.Args.What)
+	F.Intrinsic.Control.Case("CE")	
+		'Formula = C + MN/6 + (Cr + Mo + V)/5 + (Ni + Cu)/15
+		v.Local.fCE.Set(v.DataTable.Parts(v.Args.iRowIndex).C!FieldValFloat)
+		f.Intrinsic.Math.Div(v.DataTable.Parts(v.Args.iRowIndex).MN!FieldValFloat,6,v.Local.fHold)
+		f.Intrinsic.Math.Add(v.Local.fCE,v.Local.fHold,v.Local.fCE)
+		f.Intrinsic.Math.Add(v.DataTable.Parts(v.Args.iRowIndex).CR!FieldValFloat,v.DataTable.Parts(v.Args.iRowIndex).MO!FieldValFloat,v.Local.fHold)
+		f.Intrinsic.Math.Add(v.Local.fHold,v.DataTable.Parts(v.Args.iRowIndex).V!FieldValFloat,v.Local.fHold)
+		f.Intrinsic.Math.Div(v.Local.fHold,5,v.Local.fHold)
+		f.Intrinsic.Math.Add(v.Local.fCE,v.Local.fHold,v.Local.fCE)
+		f.Intrinsic.Math.Add(v.DataTable.Parts(v.Args.iRowIndex).NI!FieldValFloat,v.DataTable.Parts(v.Args.iRowIndex).CU!FieldValFloat,v.Local.fHold)
+		f.Intrinsic.Math.Div(v.Local.fHold,15,v.Local.fHold)
+		f.Intrinsic.Math.Add(v.Local.fCE,v.Local.fHold,v.Local.fCE)
+		f.Data.DataTable.SetValue("Parts",v.Args.iRowIndex,"CE",v.Local.fCE)
+	F.Intrinsic.Control.Case("TheoreticalWeight")
+		'Formula = (Thickness x Weight x Length x .2836)
+		f.Intrinsic.Math.Mult(v.DataTable.Parts(v.Args.iRowIndex).Thickness!FieldValFloat,v.DataTable.Parts(v.Args.iRowIndex).Width!FieldValFloat,v.Local.fHold)
+		f.Intrinsic.Math.Mult(v.DataTable.Parts(v.Args.iRowIndex).Length!FieldValFloat,v.Local.fHold,v.Local.fHold)
+		f.Intrinsic.Math.Mult(v.Local.fHold,0.2836,v.Local.fHold)
+		f.Data.DataTable.SetValue("Parts",v.Args.iRowIndex,"TheoreticalWeight",v.Local.fHold)	
+	F.Intrinsic.Control.Case("TotalCostLB")
+		'Formula = cost/lb + freight cost/lb
+		f.Intrinsic.Math.Add(v.DataTable.Parts(v.Args.iRowIndex).CostLB!FieldValFloat,v.DataTable.Parts(v.Args.iRowIndex).FreightLB!FieldValFloat,v.Local.fHold)
+		f.Data.DataTable.SetValue("Parts",v.Args.iRowIndex,"TotalCostLB",v.Local.fHold)
+	F.Intrinsic.Control.Case("TotalCost")
+		'Formula Total Cost/LB * Theoretical weight
+		f.Intrinsic.Math.Mult(v.DataTable.Parts(v.Args.iRowIndex).TotalCostLB!FieldValFloat,v.DataTable.Parts(v.Args.iRowIndex).TheoreticalWeight!FieldValFloat,v.Local.fHold)
+		f.Data.DataTable.SetValue("Parts",v.Args.iRowIndex,"TotalCost",v.Local.fHold)
+F.Intrinsic.Control.EndSelect
+
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Calculate.End
+
+'
+Program.Sub.gsParts_CellValueChanged.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sColumn)
+v.Local..BulkDeclareBoolean(bRet)
+
+Gui.Form.gsParts.SetCellAppearance("GV",52,v.Args.RowIndex,"BackColor",v.Color.Orange)
+f.Data.DataTable.SetValue("Parts",v.Args.RowIndex,"Changed","To save")
+
+f.Intrinsic.String.Build("#$#{0}#$#",v.Args.Column,v.Local.sColumn)
+
+Function.Intrinsic.String.IsInString("#$#C#$#MN#$#P#$#S#$#SI#$#CU#$#NI#$#CR#$#MO#$#SN#$#AL#$#TI#$#V#$#CB#$#",v.Local.sColumn,True,v.local.bret)
+f.Intrinsic.Control.If(v.Local.bRet,=,True)
+	f.Intrinsic.Control.CallSub(Calculate,"What","CE","iRowIndex",v.Args.RowIndex)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+Function.Intrinsic.String.IsInString("#$#Thickness#$#Width#$#Length#$#",v.Local.sColumn,True,v.local.bret)
+f.Intrinsic.Control.If(v.Local.bRet,=,True)
+	f.Intrinsic.Control.CallSub(Calculate,"What","TheoreticalWeight","iRowIndex",v.Args.RowIndex)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Args.Column,=,"CostLB",or,v.Args.Column,=,"FreightLB")
+	f.Intrinsic.Control.CallSub(Calculate,"What","TotalCostLB","iRowIndex",v.Args.RowIndex)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Args.Column,=,"TotalCostLB",or,v.Args.Column,=,"TheoreticalWeight")
+	f.Intrinsic.Control.CallSub(Calculate,"What","TotalCost","iRowIndex",v.Args.RowIndex)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.CallSub(CheckLength,"sColumn",v.Args.Column,"iRowIndex",v.Args.RowIndex)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+
+Program.Sub.gsParts_CellValueChanged.End
+
+Program.Sub.cmdSave_Click.Start
+v.Local..BulkDeclareString(sError,sMap)
+F.Intrinsic.Control.Try
+F.Intrinsic.UI.InvokeWaitDialog("Saving...")
+
+'Close then create 
+f.Intrinsic.Control.If(V.DataView.Parts!Parts_To_Save_DV.Exists,=,true)
+	Function.Data.DataView.Close("Parts", "Parts_To_Save_DV")
+f.Intrinsic.Control.endif
+Function.Data.DataView.Create("Parts", "Parts_To_Save_DV", 22,"Changed = 'To save'","")
+
+f.Intrinsic.Control.If(v.DataTable.Parts2.Exists)
+	f.Data.DataTable.Close("Parts2")
+f.Intrinsic.Control.EndIf
+F.Data.DataView.ToDataTable("Parts","Parts_To_Save_DV", "Parts2", true)
+
+v.Local.sMap.Set("Autonum@!@Autonum*!*Part@!@Part*!*Description@!@Description*!*Loc@!@Loc*!*PO@!@PO*!*PO_Line@!@PO_Line*!*Vendor@!@Vendor*!*Name_Vendor@!@Name_Vendor*!*Lot@!@Lot*!*InventoryNumber@!@InventoryNumber*!*Grade@!@Grade*!*Thickness@!@Thickness*!*Width@!@Width*!*Length@!@Length*!*TheoreticalWeight@!@TheoreticalWeight*!*ActualWeight@!@ActualWeight*!*CostLB@!@CostLB*!*FreightLB@!@FreightLB*!*TotalCostLB@!@TotalCostLB*!*TotalCost@!@TotalCost*!*Mill@!@Mill*!*CarTruck@!@CarTruck*!*BargeNo@!@BargeNo*!*LocationNo@!@LocationNo*!*WhseLoc@!@WhseLoc*!*CE@!@CE*!*C@!@C*!*MN@!@MN*!*P@!@P*!*S@!@S*!*SI@!@SI*!*CU@!@CU*!*NI@!@NI*!*CR@!@CR*!*MO@!@MO*!*SN@!@SN*!*AL@!@AL*!*TI@!@TI*!*V@!@V*!*CB@!@CB*!*Slab@!@Slab*!*Job@!@Job*!*SalesMan@!@SalesMan*!*ForeignDomestic@!@ForeignDomestic*!*Testing@!@Testing*!*Notes@!@Notes*!*LastDateTime@!@LastDateTime*!*LastUser@!@LastUser*!*MTRLink@!@MTRLink*!*Allocated@!@Allocated")
+f.Data.DataTable.SaveToDB("Parts2","con","GCG_4729_Part_Dim","AutoNum",256,v.Local.sMap)
+F.Intrinsic.UI.CloseWaitDialog
+
+'f.ODBC.Connection!con.Close
+'f.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+Program.Sub.cmdSave_Click.End
+
+'
+Program.Sub.CheckLength.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sColumn,sHold,sMsg)
+v.Local..BulkDeclareLong(iLen,iColIndex)
+v.Local..BulkDeclareBoolean(bRet)
+
+v.Local.sHold.Set(v.DataTable.Parts(v.Args.iRowIndex).[v.Args.sColumn]!FieldValTrim)
+Gui.Form.gsParts.GetColumnIndexByName("GV",v.Args.sColumn,v.Local.iColIndex)
+
+f.Intrinsic.Control.If(v.Args.sColumn,=,"Allocated")
+	f.Intrinsic.Control.CallSub(ColumnLengthHandlingMessageReset,"sColName",v.Args.sColumn,"iColIndex",v.Local.iColIndex,"iRIndex",v.Args.iRowIndex,"sString",v.Local.sHold,"iLen",v.Local.sHold.Length,"iMaxLen",8)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Args.sColumn,=,"Grade")
+	f.Intrinsic.Control.CallSub(ColumnLengthHandlingMessageReset,"sColName",v.Args.sColumn,"iColIndex",v.Local.iColIndex,"iRIndex",v.Args.iRowIndex,"sString",v.Local.sHold,"iLen",v.Local.sHold.Length,"iMaxLen",6)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("#$#{0}#$#",v.Args.sColumn,v.Local.sColumn)
+Function.Intrinsic.String.IsInString("#$#Job#$#Slab#$#BargeNo#$#LocationNo#$#WhseLoc#$#",v.Local.sColumn,True,v.local.bret)
+f.Intrinsic.Control.If(v.Local.bRet,=,True)
+	f.Intrinsic.Control.CallSub(ColumnLengthHandlingMessageReset,"sColName",v.Args.sColumn,"iColIndex",v.Local.iColIndex,"iRIndex",v.Args.iRowIndex,"sString",v.Local.sHold,"iLen",v.Local.sHold.Length,"iMaxLen",10)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Args.sColumn,=,"Mill",or,v.Args.sColumn,=,"CarTruck")
+	f.Intrinsic.Control.CallSub(ColumnLengthHandlingMessageReset,"sColName",v.Args.sColumn,"iColIndex",v.Local.iColIndex,"iRIndex",v.Args.iRowIndex,"sString",v.Local.sHold,"iLen",v.Local.sHold.Length,"iMaxLen",20)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+Program.Sub.CheckLength.End
+
+Program.Sub.ColumnLengthHandlingMessageReset.Start
+v.Local..BulkDeclareString(sError,sMsg)
+F.Intrinsic.Control.Try
+
+f.Intrinsic.Control.If(v.Args.iLen,>,v.Args.iMaxLen)
+	Gui.Form.gsParts.SetCellAppearance("GV",v.Args.iColIndex,v.Args.iRIndex,"BackColor",v.Color.Orange)
+	f.Intrinsic.String.Build("{0} allows only {1} characters",v.Args.sColName,v.Args.iMaxLen,v.Local.sMsg)
+	f.Intrinsic.UI.Msgbox(v.Local.sMsg,"String length")
+	f.Data.DataTable.SetValue("Parts",v.Args.iRIndex,v.Args.sColName,"")
+f.Intrinsic.Control.Else
+	f.Data.DataTable.SetValue("Parts",v.Args.iRIndex,v.Args.sColName,v.Args.sString)
+	Gui.Form.gsParts.SetCellAppearance("GV",v.Args.iColIndex,v.Args.iRIndex,"BackColor","None")
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+Program.Sub.ColumnLengthHandlingMessageReset.End
+
+Program.Sub.gsParts_RowCellClick.Start
+v.Local..BulkDeclareString(sError,sMsg,sHold)
+v.Local..BulkDeclareLong(iPID)
+v.Local.sParams.Declare(String)
+V.Local.sRet.Declare(String,"")
+V.Local.iIdentity.Declare(Long,0)
+V.Local.sPart.Declare(String,"")
+V.Local.sBin.Declare(String,"")
+V.Local.sHeatTemp.Declare(String,"")
+V.Local.sSerial.Declare(String,"")
+V.Local.sATGDoc.Declare(String,"")
+V.Local.sLot.Declare(String,"")
+
+F.Intrinsic.Control.Try
+
+
+'f.Intrinsic.UI.Msgbox(v.Args.Button)
+
+f.Intrinsic.Control.If(v.Args.Button,=,"Left")
+	F.Intrinsic.Control.SelectCase(v.Args.Column)
+'		F.Intrinsic.Control.Case("MTRLink")
+'			F.Global.DocumentControl.Invoke(v.DataTable.Parts(v.Args.RowIndex).MTRLink!FieldValString,31,"Item Lot/Bin document...",V.Local.iPID)
+		F.Intrinsic.Control.Case("Part")
+			f.Intrinsic.String.Build("{0}!*!{1}",v.DataTable.Parts(v.Args.RowIndex).Part!FieldValString,v.DataTable.Parts(v.Args.RowIndex).Loc!FieldValString,v.Local.sHold)
+			F.Global.General.CallWrapperSync(300010,v.Local.sHold)
+		F.Intrinsic.Control.Case("PO")
+			f.Intrinsic.String.Build("O!*!{0}!*!",v.DataTable.Parts(v.Args.RowIndex).PO!FieldValString,v.Local.sHold)
+			F.Global.General.CallWrapperSync(175200,v.Local.sHold)
+			
+		F.Intrinsic.Control.Case("Doc_Link")
+'			Function.Global.General.ResetPassedDataElements
+'			F.Global.General.SetPassedDataElement("DATA-LINK-TYPE",2010)
+			F.Intrinsic.String.RPad(v.DataTable.Parts(v.Args.RowIndex).Part!FieldValString," ",20,V.Local.sPart)
+			f.Intrinsic.String.Build("{0}{1}",V.Local.sPart,v.DataTable.Parts(v.Args.RowIndex).Loc!FieldValString,v.Local.sHold)
+			F.Intrinsic.String.RPad(v.Local.sHold," ",22,V.Local.sPart)
+			F.Intrinsic.String.RPad(v.DataTable.Parts(v.Args.RowIndex).Lot!FieldValTrim," ",15,V.Local.sLot)
+			F.Intrinsic.String.RPad(v.DataTable.Parts(v.Args.RowIndex).Bin!FieldValTrim," ",6,V.Local.sBin)
+			F.Intrinsic.String.RPad(v.DataTable.Parts(v.Args.RowIndex).InventoryNumber!FieldValTrim," ",15,V.Local.sHeatTemp)
+			F.Intrinsic.String.RTrim(v.DataTable.Parts(v.Args.RowIndex).Serial!FieldValTrim,V.Local.sSerial)
+			F.Intrinsic.String.Build("{0}{1}{2}{3}{4}",V.Local.sPart,V.Local.sLot,V.Local.sBin,V.Local.sHeatTemp,V.Local.sSerial,V.Local.sRet)
+'			F.Global.General.SetPassedDataElement("DATA-LINK-KEY",V.Local.sRet)
+'			F.Global.General.SetPassedDataElement("DATA-LINK-DESC",v.DataTable.Parts(v.Args.RowIndex).InventoryNumber!FieldValTrim)
+			F.Global.DocumentControl.GetLinkID(V.Local.sRet,2010,V.Local.iIdentity)
+			F.Intrinsic.Control.If(V.Local.iIdentity,=,-1)
+				F.Global.DocumentControl.CreateReference(V.Local.sRet,2010,V.Local.iIdentity)
+			F.Intrinsic.Control.EndIf
+			F.Global.DocumentControl.Invoke(V.Local.sRet,2010,v.DataTable.Parts(v.Args.RowIndex).InventoryNumber!FieldValTrim,V.Local.iIdentity)
+'			F.Intrinsic.String.Build("{0}\ATG_DocumentControl.gas",V.Caller.GasDir,V.Local.sATGDoc)
+'			F.Global.General.CallAsyncGAS(V.Local.sATGDoc,V.Local.iIdentity)
+			
+		F.Intrinsic.Control.Case("MTRLink")
+'			Function.Global.General.ResetPassedDataElements
+'			F.Global.General.SetPassedDataElement("DATA-LINK-TYPE",31)
+			F.Intrinsic.String.RPad(v.DataTable.Parts(v.Args.RowIndex).Part!FieldValString," ",20,V.Local.sPart)
+			f.Intrinsic.String.Build("{0}{1}",V.Local.sPart,v.DataTable.Parts(v.Args.RowIndex).Loc!FieldValString,v.Local.sHold)
+			F.Intrinsic.String.RPad(v.Local.sHold," ",22,V.Local.sPart)
+			F.Intrinsic.String.RPad(v.DataTable.Parts(v.Args.RowIndex).Lot!FieldValTrim," ",15,V.Local.sLot)
+			F.Intrinsic.String.RPad(v.DataTable.Parts(v.Args.RowIndex).Bin!FieldValTrim," ",6,V.Local.sBin)
+			F.Intrinsic.String.RPad(v.DataTable.Parts(v.Args.RowIndex).InventoryNumber!FieldValTrim," ",15,V.Local.sHeatTemp)
+			F.Intrinsic.String.RTrim(v.DataTable.Parts(v.Args.RowIndex).Serial!FieldValTrim,V.Local.sSerial)
+			F.Intrinsic.String.Build("{0}{1}{2}{3}{4}",V.Local.sPart,V.Local.sLot,V.Local.sBin,V.Local.sHeatTemp,V.Local.sSerial,V.Local.sRet)
+'			F.Global.General.SetPassedDataElement("DATA-LINK-KEY",V.Local.sRet)
+'			F.Global.General.SetPassedDataElement("DATA-LINK-DESC",v.DataTable.Parts(v.Args.RowIndex).InventoryNumber!FieldValTrim)
+			F.Global.DocumentControl.GetLinkID(V.Local.sRet,31,V.Local.iIdentity)
+			F.Intrinsic.Control.If(V.Local.iIdentity,=,-1)
+				F.Global.DocumentControl.CreateReference(V.Local.sRet,31,V.Local.iIdentity)
+			F.Intrinsic.Control.EndIf
+			F.Global.DocumentControl.Invoke(V.Local.sRet,31,v.DataTable.Parts(v.Args.RowIndex).InventoryNumber!FieldValTrim,V.Local.iIdentity)
+'			F.Intrinsic.String.Build("{0}\ATG_DocumentControl.gas",V.Caller.GasDir,V.Local.sATGDoc)
+'			F.Global.General.CallAsyncGAS(V.Local.sATGDoc,V.Local.iIdentity)
+			
+	F.Intrinsic.Control.EndSelect 
+f.Intrinsic.Control.elseIf(v.Args.Button,=,"Right")
+	F.Intrinsic.UI.SetClipboardText(v.DataTable.Parts(v.Args.RowIndex).Part!FieldValString)
+f.Intrinsic.Control.EndIf
+ 
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+Program.Sub.gsParts_RowCellClick.End
+
+Program.Sub.cmdNewQuote_Click.Start
+F.Intrinsic.Control.Try
+F.Global.General.CallWrapperSync(251000,"!*!N")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNewQuote_Click.End
+
+Program.Sub.cmdNewOrder_Click.Start
+F.Intrinsic.Control.Try
+F.Global.General.CallWrapperSync(200000,"!*!N!*!")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNewOrder_Click.End
+
+Program.Sub.cmdPartBrowser_Click.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sRet,sPart)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(100,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	f.Intrinsic.String.GSSPartString(v.Local.sRet(0),v.Local.sRet(1),v.Local.sPart)
+	gui.Form.txtPart.Text(v.Local.sPart)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdPartBrowser_Click.End
+
+Program.Sub.cmdFind_Click.Start
+F.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sFilter,sHold)
+
+f.Intrinsic.UI.InvokeWaitDialog("Searching...")
+
+f.Intrinsic.Control.If(V.DataView.Parts!DTV.Exists,=,true)
+	Gui.Form.gsParts.Serialize("GV", v.Global.sGSProgramSerialize)	
+	Function.Data.DataView.Close("Parts", "DTV")
+f.Intrinsic.Control.endif
+
+f.Intrinsic.Control.If(v.Screen.Form!txtPart.Text.Trim,<>,"")
+	f.Intrinsic.String.Concat("Part like '*",v.Screen.Form!txtPart.Text,"*'",v.Local.sFilter)	
+f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.If(v.Screen.Form!txtVendor.Text.Trim,<>,"")
+	f.Intrinsic.String.Concat("Vendor like '*",v.Screen.Form!txtVendor.Text,"*'",v.Local.sHold)
+	f.Intrinsic.Control.If(v.Local.sFilter,=,"")
+		v.Local.sFilter.Set(v.Local.sHold)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Concat(v.Local.sFilter," and ",v.Local.sHold,v.Local.sFilter)
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.Form!txtPO.Text.Trim,<>,"")
+	f.Intrinsic.String.Concat("PO like '*",v.Screen.Form!txtPO.Text,"*'",v.Local.sHold)
+	f.Intrinsic.Control.If(v.Local.sFilter,=,"")
+		v.Local.sFilter.Set(v.Local.sHold)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Concat(v.Local.sFilter," and ",v.Local.sHold,v.Local.sFilter)
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.Form!txtLot.Text.Trim,<>,"")
+	f.Intrinsic.String.Concat("Lot like '*",v.Screen.Form!txtLot.Text,"*'",v.Local.sHold)
+	f.Intrinsic.Control.If(v.Local.sFilter,=,"")
+		v.Local.sFilter.Set(v.Local.sHold)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Concat(v.Local.sFilter," and ",v.Local.sHold,v.Local.sFilter)
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.Form!txtInventoryNumber.Text.Trim,<>,"")
+	f.Intrinsic.String.Concat("InventoryNumber like '*",v.Screen.Form!txtInventoryNumber.Text,"*'",v.Local.sHold)
+	f.Intrinsic.Control.If(v.Local.sFilter,=,"")
+		v.Local.sFilter.Set(v.Local.sHold)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Concat(v.Local.sFilter," and ",v.Local.sHold,v.Local.sFilter)
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.EndIf
+
+Function.Data.DataView.Create("Parts","DTV", 22,v.Local.sFilter, "")
+Gui.Form.gsParts.AddGridViewFromDataview("GV","Parts","DTV")
+f.Intrinsic.Control.CallSub(formatgrid)
+gui.Form.gsParts.MainView("GV")
+gui.Form.lblRows.Text(v.DataView.Parts!DTV.RowCount)
+f.Intrinsic.Control.If(v.Global.sGSProgramSerialize,<>,"")
+	Gui.Form.gsParts.Deserialize(v.Global.sGSProgramSerialize)
+f.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+Program.Sub.cmdFind_Click.End
+
+Program.Sub.cmdClear_Click.Start
+f.Intrinsic.Control.Try
+
+gui.Form.txtPart.Text("")
+gui.Form.txtVendor.Text("")
+gui.Form.txtPO.Text("")
+gui.Form.txtLot.Text("")
+gui.Form.txtInventoryNumber.Text("")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.Check_CusTom_Table.Start
+f.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sError)
+v.Local.bExist.Declare(boolean)
+Function.ODBC.Connection!con.TableExists("GCG_4729_Part_Dim", v.Local.bExist)
+f.Intrinsic.Control.If(v.Local.bExist,=,false)
+	f.Intrinsic.UI.InvokeWaitDialog("Creating Custom Table...")
+	f.ODBC.Connection!con.Execute("CREATE TABLE GCG_4729_Part_Dim( Autonum IDENTITY DEFAULT '0', PO CHAR(7), PO_Line CHAR(3), Receiver CHAR(6), Vendor CHAR(6), Name_Vendor CHAR(30), Part CHAR(20), Loc CHAR(2), Description CHAR(30), Lot CHAR(15), InventoryNumber CHAR(15), Bin CHAR(6), Serial CHAR(30), MTRLink CHAR(88), Grade CHAR(6), Thickness NUMERIC(10,4), Width NUMERIC(10,4), Length NUMERIC(10,4), TheoreticalWeight NUMERIC(10,4), ActualWeight NUMERIC(10,4), CostLB NUMERIC(10,4), FreightLB NUMERIC(10,4), TotalCostLB NUMERIC(10,4), TotalCost NUMERIC(10,4), Mill CHAR(20), CarTruck CHAR(20), BargeNo CHAR(10), LocationNo CHAR(10), WhseLoc CHAR(10), CE NUMERIC(10,4), C NUMERIC(10,4), MN NUMERIC(10,4), P NUMERIC(10,4), S NUMERIC(10,4), SI NUMERIC(10,4), CU NUMERIC(10,4), NI NUMERIC(10,4), CR NUMERIC(10,4), MO NUMERIC(10,4), SN NUMERIC(10,4), AL NUMERIC(10,4), TI NUMERIC(10,4), V NUMERIC(10,4), CB NUMERIC(10,4), Slab CHAR(10), Job CHAR(10), SalesMan CHAR(30), ForeignDomestic CHAR(8), Testing CHAR(3), Notes LONGVARCHAR, LastDateTime CHAR(20), LastUser CHAR(8), Allocated CHAR(8), Validate CHAR(1), Save CHAR(1), Wait CHAR(1), Overwrite BIT,UNIQUE (Autonum));")
+	f.ODBC.Connection!con.Execute("CREATE INDEX GCG_4729_01 USING 1 ON GCG_4729_Part_Dim(PO);")
+	f.ODBC.Connection!con.Execute("CREATE INDEX GCG_4729_02 USING 2 ON GCG_4729_Part_Dim(PO_Line);")
+	f.ODBC.Connection!con.Execute("CREATE INDEX GCG_4729_03 USING 3 ON GCG_4729_Part_Dim(Receiver);")
+	f.ODBC.Connection!con.Execute("CREATE INDEX GCG_4729_04 USING 4 ON GCG_4729_Part_Dim(Part);")
+	f.ODBC.Connection!con.Execute("CREATE INDEX GCG_4729_05 USING 5 ON GCG_4729_Part_Dim(Loc);")
+	f.ODBC.Connection!con.Execute("CREATE INDEX GCG_4729_06 USING 6 ON GCG_4729_Part_Dim(Lot);")
+	f.ODBC.Connection!con.Execute("CREATE INDEX GCG_4729_07 USING 7 ON GCG_4729_Part_Dim(InventoryNumber);")
+	f.ODBC.Connection!con.Execute("CREATE INDEX GCG_4729_08 USING 8 ON GCG_4729_Part_Dim(Bin);")
+	f.ODBC.Connection!con.Execute("CREATE INDEX GCG_4729_09 USING 9 ON GCG_4729_Part_Dim(Serial);")			
+	f.Intrinsic.UI.CloseWaitDialog
+f.Intrinsic.Control.Endif
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Check_CusTom_Table.End
+
+Program.Sub.cmdExport_Click.Start
+F.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sError,sFileExport,sMsg,sDate,sTime)
+v.Local..BulkDeclareBoolean(bExcel)
+
+'Format date time to create file name with extension date time stamp
+f.Intrinsic.String.Format(v.Ambient.Date,"MMDDYYYY",v.Local.sDate)
+f.Intrinsic.String.Format(v.Ambient.Now,"HhNnSs",v.Local.sTime)
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+F.Intrinsic.Control.If(V.Local.bExcel)
+	F.Intrinsic.String.Build("{0}\PartDimension_{1}_{2}.xlsx",V.Caller.LocalGssTempDir,v.Local.sDate,v.Local.sTime,V.Local.sFileExport)
+	gui.Form.gsParts.Export(V.Local.sFileExport,"xlsx")
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}\PartDimension_{1}_{2}.csv",V.Caller.LocalGssTempDir,v.Local.sDate,v.Local.sTime,V.Local.sFileExport)
+	Gui.Form.gsParts.Export(V.Local.sFileExport,"csv")
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError)
+
+f.Intrinsic.UI.InvokeWaitDialog("Pulling data...")
+
+f.Intrinsic.Control.BlockEvents
+
+f.Intrinsic.Control.CallSub(MergeData)
+
+f.Intrinsic.UI.CloseWaitDialog
+
+f.Intrinsic.Control.UnBlockEvents
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.UnBlockEvents
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError)
+V.Local.sFile.Declare(String,"")
+V.Local.bRet.Declare(Boolean,False)
+V.Local.sReturn.Declare(String,"")
+'V.Local.sSerialize.Declare 
+
+'F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GV",4279,1000,6,"",V.Local.sSerialize)
+'F.Intrinsic.Control.If(V.Local.sSerialize.trim,<>,"")
+'	Gui.Form.gsParts.Deserialize(V.Local.sSerialize)
+'F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("{0}\Custom\4729\{1}_4729_Parts.txt",V.Caller.GlobalDir,V.Caller.User,V.Local.sFile)
+
+	F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bRet)
+	F.Intrinsic.Control.If(V.Local.bRet)
+		F.Intrinsic.File.File2String(V.Local.sFile,V.Local.sReturn)
+		Gui.Form.gsParts.Deserialize(V.Local.sReturn)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.UnBlockEvents
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sFile,sDir)
+V.Local.sSerialize.Declare 
+
+	F.Intrinsic.String.Build("{0}\Custom\4729",V.Caller.GlobalDir,V.Local.sDir)
+'Gui.Form.gsParts.Serialize("GV",V.Local.sSerialize)
+'F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GV",4279,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	F.Intrinsic.String.Build("{0}\{1}_4729_Parts.txt",V.Local.sDir,V.Caller.User,V.Local.sFile)
+	
+	Gui.Form.gsParts.Serialize("GV",V.Local.sSerialize)
+	
+	F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sSerialize)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.UnBlockEvents
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.MergeData.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sSQL)
+V.Local.bRet.Declare(Boolean,False)
+
+'f.Intrinsic.String.Build("Select {0} from GCG_4729_Part_Dim where Validate = 'Y' and rtrim(part)+rtrim(bin)+(rtrim(inventorynumber)+rtrim(serial)) In(Select rtrim(part)+rtrim(bin)+(rtrim(heat)+rtrim(serial_number)) From V_Item_Master Where Quantity > 0)",v.Global.sColumnUsedSelect,v.Local.sSQL)
+
+'F.Intrinsic.Control.If(v.DataTable.PartsTemp.Exists,=,True)
+'	F.Data.DataTable.Close("PartsTemp")
+''	Function.Data.Dictionary.Close("InvoiceDict")
+''	Function.Data.Dictionary.Close("InvoiceNoDict")
+''	Function.Data.Dictionary.Close("SerialNoDict")
+'f.Intrinsic.Control.EndIf 
+
+F.Data.Dictionary.Exists("InvoiceDict",V.Local.bRet)
+F.Intrinsic.Control.If(V.Local.bRet)
+	F.Data.Dictionary.Close("InvoiceDict")
+F.Intrinsic.Control.EndIf
+
+F.Data.Dictionary.Exists("InvoiceNoDict",V.Local.bRet)
+F.Intrinsic.Control.If(V.Local.bRet)
+	F.Data.Dictionary.Close("InvoiceNoDict")
+F.Intrinsic.Control.EndIf
+
+F.Data.Dictionary.Exists("SerialNoDict",V.Local.bRet)
+F.Intrinsic.Control.If(V.Local.bRet)
+	F.Data.Dictionary.Close("SerialNoDict")
+F.Intrinsic.Control.EndIf
+
+'f.Data.DataTable.CreateFromSQL("PartsTemp","con",v.Local.sSQL,true)
+'f.Data.DataTable.AddColumn("PartsTemp","Changed","String","")
+'f.Data.DataTable.AddColumn("PartsTemp","Invoice","boolean",False)
+'f.Data.DataTable.AddColumn("PartsTemp","InvoiceNo","String","")
+
+'f.Data.DataTable.AddExpressionColumn("PartsTemp","PartsHeat","String","[Part] + [InventoryNumber]")
+
+'F.Intrinsic.String.Build("Select 0 as AutoNum, a.Part+a.Heat as PartsHeat, PO, PO_Line, Receiver, Vendor, Name_Vendor, a.Part, Loc, Description, a.Lot, a.Heat as InventoryNumber, a.Bin, a.Serial_Number as Serial, MTRLink, Grade, Thickness, b.Width, b.Length, TheoreticalWeight, ActualWeight, CostLB, FreightLB, TotalCostLB, TotalCost, Mill, CarTruck, BargeNo, LocationNo, WhseLoc,","",V.Local.sSql)
+'F.Intrinsic.String.Build("{0} CE, C, MN, P, S, SI, CU, NI, CR, MO, SN, AL, TI, V, CB, Slab, Job, SalesMan, ForeignDomestic, Testing, Notes, LastDateTime, LastUser, b.Allocated, Validate, Save, Wait, Overwrite",V.Local.sSql,V.Local.sSql)
+'F.Intrinsic.String.Build("{0} From V_Item_Master a Left Join GCG_4729_Part_Dim b on a.Part = b.Part and a.Heat = b.InventoryNumber and rtrim(Serial_Number) = b.serial Where Validate = 'Y' and rtrim(a.Part) Not In(Select c.part From GCG_4729_Part_Dim c Where a.Serial_Number = c.Serial and a.Heat = c.InventoryNumber) and Heat <> '' and a.Quantity > 0",V.Local.sSql,V.Local.sSql)
+
+'SFF - 3/14/19
+'this updates the LBS field in INVENTORY_MST2 for drops only, the users are entering in the total weight in the wt-per-ft field in the drop screen
+' this just updates the LBS feild to reflec that. they have no need for the weight per foot value.
+f.ODBC.Connection!con.execute("update INVENTORY_MST2 set LBS = WT_PER_FOOT where part in (Select PART from v_INVENTORY_MSTR where FLAG_DROP = 'Y') and LBS = 0")
+
+'F.Intrinsic.String.Build("Select Distinct if(autonum is null or autonum = '' ,0,autonum) as AutoNum, a.Part+a.Heat as PartsHeat, PO, PO_Line, Receiver, Vendor, Name_Vendor, rtrim(a.Part) as Part, Loc, b.Description, a.Lot, a.Heat as InventoryNumber, a.Bin, a.Serial_Number as Serial, MTRLink, Grade, Thickness, b.Width, b.Length, TheoreticalWeight, ActualWeight, CostLB, FreightLB, TotalCostLB, TotalCost, Mill, CarTruck, BargeNo, LocationNo, WhseLoc, CE, C, MN, P, S, SI, CU, NI, CR, MO, SN, AL, TI, V, CB, Slab, Job, SalesMan, ForeignDomestic, Testing, Notes, LastDateTime, LastUser, b.Allocated, Validate, Save, Wait, Overwrite From V_Item_Master a Left Join GCG_4729_Part_Dim b on a.Heat = b.InventoryNumber and Validate = 'Y' and rtrim(Serial_Number) = b.serial Where Heat <> '' and a.Quantity > 0","",V.Local.sSql)
+'F.Intrinsic.String.Build("Select Distinct if(autonum is null or autonum = '' ,0,autonum) as AutoNum, a.Part+a.Heat as PartsHeat, PO, PO_Line, Receiver, Vendor, b.Name_Vendor, rtrim(a.Part) as Part, Loc, if(b.Description is null or b.Description  = '',c.Description,b.Description) as Description, a.Lot, a.Heat as InventoryNumber, a.Bin, a.Serial_Number as Serial, ' ' as MTRLink, Grade, Thickness, if(b.Width is null or b.Width = '',d.Width,b.Width) as Width, if(b.Length is null or b.length = '',d.length,b.length) as Length, if(TheoreticalWeight is null or TheoreticalWeight = '',d.LBS,TheoreticalWeight) as TheoreticalWeight, if(ActualWeight is null or ActualWeight = '',d.LBS,ActualWeight) as ActualWeight, CostLB, FreightLB, TotalCostLB, TotalCost, Mill, CarTruck, BargeNo, LocationNo, WhseLoc, CE, C, MN, P, S, SI, CU, NI, CR, MO, SN, AL, TI, V, CB, Slab, Job, SalesMan, ForeignDomestic, Testing, Notes, LastDateTime, LastUser, b.Allocated, Validate, Save, Wait, Overwrite From V_Item_Master a left Join GCG_4729_Part_Dim b on a.part = b.part and a.Heat = b.InventoryNumber and Validate = 'Y' and rtrim(Serial_Number) = b.serial left join V_Inventory_Mstr c on a.part = c.part left join V_Inventory_Mst2 d on a.part = d.part Where Heat <> '' and a.Quantity > 0","",V.Local.sSql)
+'F.Intrinsic.String.Build("Select Distinct AutoNum, a.Part+InventoryNumber as PartsHeat, PO, PO_Line, Receiver, Vendor, Name_Vendor, rtrim(a.Part) as Part, Loc, a.Description, a.Lot, InventoryNumber, a.Bin, Serial, ' ' as MTRLink, Grade, Thickness, a.Width, a.Length, TheoreticalWeight, ActualWeight, CostLB, FreightLB, TotalCostLB, TotalCost, Mill, CarTruck, BargeNo, LocationNo, WhseLoc, CE, C, MN, P, S, SI, CU, NI, CR, MO, SN, AL, TI, V, CB, Slab, Job, SalesMan, ForeignDomestic, Testing, Notes, LastDateTime, LastUser, a.Allocated, Validate, Save, Wait, Overwrite From GCG_4729_Part_Dim a Left join V_Inventory_Mstr b on a.part = b.part Left Join V_Item_Master c on a.Part = c.Part and a.InventoryNumber = c.Heat and a.Serial = c.Serial_Number Where InventoryNumber <> '' and c.Quantity > 0 and Validate = 'Y'","",V.Local.sSql)
+F.Intrinsic.String.Build("Select Distinct AutoNum, a.Part+a.Heat as PartsHeat, PO, PO_Line, Receiver, Vendor, Name_Vendor, rtrim(a.Part) as Part, Loc, c.Description, a.Lot, Heat as InventoryNumber, a.Bin, Serial_Number as Serial, ' ' as MTRLink, Grade, Thickness, c.Width, c.Length, TheoreticalWeight, ActualWeight, CostLB, FreightLB, TotalCostLB, TotalCost, Mill, CarTruck, BargeNo, LocationNo, WhseLoc, CE, C, MN, P, S, SI, CU, NI, CR, MO, SN, AL, TI, V, CB, Slab, Job, SalesMan, ForeignDomestic, Testing, Notes, LastDateTime, LastUser, c.Allocated, Validate, Save, Wait, Overwrite From V_Item_Master a Left join V_Inventory_Mstr b on a.part = b.part Left Join GCG_4729_Part_Dim c on a.part = c.part and c.InventoryNumber = a.Heat and c.Serial = a.Serial_Number Where InventoryNumber <> '' and a.Quantity > 0 and Validate = 'Y'","",V.Local.sSql)
+
+F.Data.DataTable.CreateFromSQL("Temp","Con",V.Local.sSql)
+f.Data.DataTable.AddColumn("Temp","Changed","String","")
+f.Data.DataTable.AddColumn("Temp","Invoice","boolean",False)
+f.Data.DataTable.AddColumn("Temp","InvoiceNo","String","")
+
+'f.Data.Dictionary.CreateFromSQL("InvoiceDict","con","Select Purchase_Order,Cast(1 as Bit) from AP_Open_Items where Batch_Code = '10'")
+'f.Data.Dictionary.SetDefaultReturn("InvoiceDict",False)
+'F.Data.DataTable.FillFromDictionary("PartsTemp","InvoiceDict","PO","Invoice")
+'F.Data.DataTable.FillFromDictionary("Temp","InvoiceDict","PO","Invoice")
+
+f.Data.Dictionary.CreateFromSQL("InvoiceNoDict","con","Select Purchase_Order,Invoice from AP_Open_Items where Batch_Code = '10'")
+f.Data.Dictionary.SetDefaultReturn("InvoiceNoDict","")
+'F.Data.DataTable.FillFromDictionary("PartsTemp","InvoiceNoDict","PO","InvoiceNo")
+F.Data.DataTable.FillFromDictionary("Temp","InvoiceNoDict","PO","InvoiceNo")
+F.Data.Dictionary.Close("InvoiceNoDict")
+
+'F.Data.Dictionary.CreateFromSQL("Desc","con","Select rtrim(Part), rtrim(Description) From V_Inventory_Mstr")
+'F.Data.Dictionary.SetDefaultReturn("Desc","")
+'F.Data.DataTable.FillFromDictionary("Temp","Desc","Part","Description")
+'F.Data.Dictionary.Close("Desc")
+
+'F.Data.Dictionary.CreateFromSQL("Width","con","Select rtrim(Part), Width From V_Inventory_Mst2")
+'F.Data.Dictionary.SetDefaultReturn("Width","0")
+'F.Data.DataTable.FillFromDictionary("Temp","Width","Part","Width")
+'F.Data.Dictionary.Close("Width")
+
+'F.Data.Dictionary.CreateFromSQL("Length","con","Select rtrim(Part), Length From V_Inventory_Mst2")
+'F.Data.Dictionary.SetDefaultReturn("Length","0")
+'F.Data.DataTable.FillFromDictionary("Temp","Length","Part","Length")
+'F.Data.Dictionary.Close("Length")
+'f.Data.Dictionary.CreateFromSQL("SerialNoDict","con","Select Item.Part+Heat,Item.Lot from GCG_4729_Part_Dim DIM join v_Item_master Item on DIM.Part = Item.Part and Heat = InventoryNumber where Validate = 'Y'")
+'f.Data.Dictionary.SetDefaultReturn("SerialNoDict","")
+'F.Data.DataTable.FillFromDictionary("PartsTemp","SerialNoDict","PartsHeat","Lot")
+
+'F.Data.DataTable.SetPK("DT1","EMPL","CHARGE_DATE")
+Gui.Form.gsParts.SuspendLayout
+F.Data.DataTable.DeleteRow("Parts")
+F.Data.DataTable.AcceptChanges("Parts")
+F.Data.DataTable.Merge("Temp","Parts",False,2)
+Gui.Form.gsParts.ResumeLayout
+F.Data.DataTable.Close("Temp")
+
+'F.Data.DataTable.SetPK("Parts","Autonum")
+'F.Data.DataTable.SetPK("PartsTemp","Autonum")
+
+'F.Data.DataTable.Merge("PartsTemp","Parts",False,2)
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.UnBlockEvents
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.MergeData.End
+
+Program.Sub.Bind_Parts_1.Start
+F.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sSQL)
+v.Local.bRet.Declare
+
+
+f.Intrinsic.String.Build("Select {0} from GCG_4729_Part_Dim where Validate = '1'",v.Global.sColumnUsedSelect,v.Local.sSQL)
+
+f.Data.DataTable.CreateFromSQL("Parts","con",v.Local.sSQL,true)
+f.Data.DataTable.AddColumn("Parts","Changed","String")
+f.Data.DataTable.AddColumn("Parts","PartsHeat","String")
+f.Data.DataTable.AddColumn("Parts","Invoice","boolean",False)
+f.Data.DataTable.AddColumn("Parts","InvoiceNo","String","")
+
+F.Data.DataTable.AddColumn("Parts","Doc_Link","String")
+
+f.Intrinsic.Control.CallSub(MergeData)
+
+gui.Form.gsParts.AddGridviewFromDatatable("GV","Parts")
+
+gui.Form.gsParts.SuspendLayout
+
+f.Intrinsic.Control.CallSub(formatgrid)
+
+gui.Form.gsParts.MainView("GV")
+
+gui.Form.lblRows.Text(v.DataTable.Parts.RowCount)
+
+Gui.Form.gsParts.SetColumnProperty("GV","MTRLink","Caption","MTR Link")
+Gui.Form.gsParts.SetColumnProperty("GV","MTRLink","Icon","DCS-ON")
+Gui.Form.gsParts.SetColumnProperty("GV","MTRLink","Fixed","Left")
+Gui.Form.gsParts.SetColumnProperty("GV","MTRLink","ReadOnly",True)
+GUi.Form.gsParts.SetColumnProperty("GV","MTRLink","Allowedit",False)
+
+Gui.Form.gsParts.SetColumnProperty("GV","Doc_Link","Caption","Test Doc Link")
+Gui.Form.gsParts.SetColumnProperty("GV","Doc_Link","Icon","DCS-ON")
+Gui.Form.gsParts.SetColumnProperty("GV","Doc_Link","Fixed","Left")
+Gui.Form.gsParts.SetColumnProperty("GV","Doc_Link","HeaderFontBold",True)
+Gui.Form.gsParts.SetColumnProperty("GV","Doc_Link","ReadOnly",True)
+GUi.Form.gsParts.SetColumnProperty("GV","Doc_Link","Allowedit",False)
+
+f.Intrinsic.Control.CallSub(deserialize)
+
+gui.Form.gsParts.ResumeLayout
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+Program.Sub.Bind_Parts_1.End
+
+Program.Sub.cmdSetFilter_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.sFilter.Declare(String,"")
+	
+	Gui.Form.gsParts.Enabled(False)
+	
+	F.Intrinsic.UI.InvokeWaitDialog("Setting Filter")
+	
+	F.Intrinsic.Control.If(V.Screen.Form!txtFromLen.Text,<>,"","AND",V.Screen.Form!txtLenTo.Text,<>,"")
+		F.Intrinsic.String.Build("[Length] >= {0} and [Length] <= {1}",V.Screen.Form!txtFromLen.Text,V.Screen.Form!txtLenTo.Text,V.Local.sFilter)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Screen.Form!txtFromLen.Text,<>,"")
+			F.Intrinsic.String.Build("[Length] = {0}",V.Screen.Form!txtFromLen.Text,V.Local.sFilter)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Screen.Form!txtLenTo.Text,<>,"")
+				F.Intrinsic.String.Build("[Length] = {0}",V.Screen.Form!txtLenTo.Text,V.Local.sFilter)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form!txtFromWidth.Text,<>,"","AND",V.Screen.Form!txtWidthTo.Text,<>,"")
+		F.Intrinsic.Control.If(V.Local.sFilter.Length,>,0)
+			F.Intrinsic.String.Build("{0} and [Width] >= {1} and [Width] <= {2}",V.Local.sFilter,V.Screen.Form!txtFromWidth.Text,V.Screen.Form!txtWidthTo.Text,V.Local.sFilter)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("[Width] >= {0} and [Width] <= {1}",V.Screen.Form!txtFromWidth.Text,V.Screen.Form!txtWidthTo.Text,V.Local.sFilter)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Screen.Form!txtFromWidth.Text,<>,"")
+			F.Intrinsic.Control.If(V.Local.sFilter.Length,>,0)
+				F.Intrinsic.String.Build("{0} and [Width] = {1}",V.Local.sFilter,V.Screen.Form!txtFromWidth.Text,V.Local.sFilter)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("[Width] = {0}",V.Screen.Form!txtFromWidth.Text,V.Local.sFilter)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Screen.Form!txtWidthTo.Text,<>,"")
+				F.Intrinsic.Control.If(V.Local.sFilter.Length,>,0)
+					F.Intrinsic.String.Build("{0} and [Width] = {1}",V.Local.sFilter,V.Screen.Form!txtWidthTo.Text,V.Local.sFilter)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Build("[Width] = {0}",V.Screen.Form!txtWidthTo.Text,V.Local.sFilter)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form!txtFromThick.Text,<>,"","AND",V.Screen.Form!txtThickTo.Text,<>,"")
+		F.Intrinsic.Control.If(V.Local.sFilter.Length,>,0)
+			F.Intrinsic.String.Build("{0} and [Thickness] >= {1} and [Thickness] <= {2}",V.Local.sFilter,V.Screen.Form!txtFromThick.Text,V.Screen.Form!txtThickTo.Text,V.Local.sFilter)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("[Thickness] >= {0} and [Thickness] <= {1}",V.Screen.Form!txtFromThick.Text,V.Screen.Form!txtThickTo.Text,V.Local.sFilter)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Screen.Form!txtFromThick.Text,<>,"")
+			F.Intrinsic.Control.If(V.Local.sFilter.Length,>,0)
+				F.Intrinsic.String.Build("{0} and [Thickness] = {1}",V.Local.sFilter,V.Screen.Form!txtFromThick.Text,V.Local.sFilter)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("[Thickness] = {0}",V.Screen.Form!txtFromThick.Text,V.Local.sFilter)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Screen.Form!txtThickTo.Text,<>,"")
+				F.Intrinsic.Control.If(V.Local.sFilter.Length,>,0)
+					F.Intrinsic.String.Build("{0} and [Thickness] = {1}",V.Local.sFilter,V.Screen.Form!txtThickTo.Text,V.Local.sFilter)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Build("[Thickness] = {0}",V.Screen.Form!txtThickTo.Text,V.Local.sFilter)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	Gui.Form.gsParts.SetGridviewProperty("GV","ActiveFilterString",V.Local.sFilter)
+	
+	F.Intrinsic.UI.CloseWaitDialog
+	
+	Gui.Form.gsParts.Enabled(True)
+	
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSetFilter_Click.End
+
+Program.Sub.cmdClearFilter_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	
+	Gui.Form.gsParts.Enabled(False)
+	
+	F.Intrinsic.UI.InvokeWaitDialog("Clearing Filter")
+	
+	Gui.Form.txtFromLen.Text(V.Ambient.DBNull)
+	Gui.Form.txtFromThick.Text(V.Ambient.DBNull)
+	Gui.Form.txtFromWidth.Text(V.Ambient.DBNull)
+	Gui.Form.txtThickTo.Text(V.Ambient.DBNull)
+	Gui.Form.txtLenTo.Text(V.Ambient.DBNull)
+	Gui.Form.txtWidthTo.Text(V.Ambient.DBNull)
+	
+	Gui.Form.gsParts.SetGridviewProperty("GV","ActiveFilterString","")
+	
+	F.Intrinsic.UI.CloseWaitDialog
+	
+	Gui.Form.gsParts.Enabled(True)
+	
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdClearFilter_Click.End
+
+Program.Sub.Set_Anchors.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	
+	gui.Form.gsParts.Anchor(15)
+	gui.Form.cmdSave.Anchor(6)
+	gui.Form.cmdNewOrder.Anchor(9)
+	gui.Form.cmdNewQuote.Anchor(9)
+	Gui.Form.cmdClearFilter.Anchor(9)
+	Gui.Form.cmdSetFilter.Anchor(9)
+	Gui.Form.lblThickness.Anchor(9)
+	Gui.Form.lblThickTo.Anchor(9)
+	Gui.Form.txtThickTo.Anchor(9)
+	Gui.Form.txtFromThick.Anchor(9)
+	Gui.Form.lblWidth.Anchor(9)
+	Gui.Form.lblWidthTo.Anchor(9)
+	Gui.Form.txtWidthTo.Anchor(9)
+	Gui.Form.txtFromWidth.Anchor(9)
+	Gui.Form.lblLength.Anchor(9)
+	Gui.Form.lblLengthTo.Anchor(9)
+	Gui.Form.txtFromLen.Anchor(9)
+	Gui.Form.txtLenTo.Anchor(9)
+	Gui.Form.lblRows.Anchor(9)
+	Gui.Form.lblPart4.Anchor(9)
+	Gui.Form.cmdRefresh.Anchor(9)
+	Gui.Form.cmdExport.Anchor(9)
+	gui.Form.lblPart.Anchor(5)
+	gui.Form.lblVendor.Anchor(5)
+	gui.Form.lblPO.Anchor(5)
+	gui.Form.lblLot.Anchor(5)
+	gui.Form.lblInventoryNumber.Anchor(5)
+	gui.Form.txtPart.Anchor(5)
+	gui.Form.txtVendor.Anchor(5)
+	gui.Form.txtPO.Anchor(5)
+	gui.Form.txtLot.Anchor(5)
+	gui.Form.txtInventoryNumber.Anchor(5)
+	gui.Form.cmdClear.Anchor(5)
+	gui.Form.cmdFind.Anchor(5)
+
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Set_Anchors.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$11/1/2017 4:26:45 PM$}$False
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$Quote 3904 - ACH file export
+Program.Sub.Comments.End
